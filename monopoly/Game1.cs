@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System;
 
 namespace monopoly
 {
@@ -43,6 +44,7 @@ namespace monopoly
                 Exit();
 
             // TODO: Add your update logic here
+            Console.Write("this is pengyu");
 
             base.Update(gameTime);
         }
