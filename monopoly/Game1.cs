@@ -44,7 +44,7 @@ namespace monopoly
                 Exit();
 
             // TODO: Add your update logic here
-            Console.Write("this is Arthur");
+            Console.Write("this is pengyu");
 
             base.Update(gameTime);
         }
