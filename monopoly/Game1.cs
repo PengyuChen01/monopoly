@@ -44,7 +44,7 @@ namespace monopoly
                 Exit();
 
             // TODO: Add your update logic here
-            Console.Write("this is pengyu");
+           
 
             base.Update(gameTime);
         }
@@ -56,16 +56,16 @@ namespace monopoly
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
             _spriteBatch.Draw(
-    ballTexture,
-    ballPosition,
-    null,
-    Color.White,
-    0f,
-    new Vector2(ballTexture.Width / 2, ballTexture.Height / 2),
-    Vector2.One,
-    SpriteEffects.None,
-    0f
-);
+                ballTexture,
+                ballPosition,
+                null,
+                Color.White,
+                0f,
+                new Vector2(ballTexture.Width / 2, ballTexture.Height / 2),
+                Vector2.One,
+                SpriteEffects.None,
+                0f
+            );
 
             _spriteBatch.End();
             base.Draw(gameTime);
