@@ -53,8 +53,6 @@ namespace monopoly
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-            _spriteBatch.Draw(ballTexture, ballPosition, Color.White);
-            
             _spriteBatch.End();
             base.Draw(gameTime);
         }
