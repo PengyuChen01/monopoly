@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
 using System;
+using System.Diagnostics;
 
 namespace monopoly
 {
@@ -14,6 +16,9 @@ namespace monopoly
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
+        private IGameSystem gameSystem;
+
+        Texture2D gameBoard;
         public Game1()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -21,12 +26,22 @@ namespace monopoly
             IsMouseVisible = true;
         }
 
+        public static float scale = 2.1f;
+        public static Texture2D boardTexture = null;
+        public static Texture2D hatTexture = null;
+        public static Texture2D racecarTexture = null;
+        public static Texture2D battleshipTexture = null;
+        public static Texture2D thimbleTexture = null;
+
+       
+
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
             ballPosition = new Vector2(_graphics.PreferredBackBufferWidth / 2,
                 _graphics.PreferredBackBufferHeight / 2);
             ballSpeed = 100f;
+            gameSystem = new MonopolyGamesSystem();
             base.Initialize();
         }
 
@@ -36,16 +51,17 @@ namespace monopoly
 
             // TODO: use this.Content to load your game content here
             ballTexture = Content.Load<Texture2D>("ball");
+            boardTexture = Content.Load<Texture2D>("monopoly");
+            hatTexture = Content.Load<Texture2D>("hat");
+            racecarTexture = Content.Load<Texture2D>("racecar");
+            thimbleTexture = Content.Load<Texture2D>("thimble");
+            battleshipTexture = Content.Load<Texture2D>("battleship");
+            gameSystem.setUp();
         }
 
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-
-            // TODO: Add your update logic here
-            Console.Write("this is arthur");
-
+            gameSystem.update();
             base.Update(gameTime);
         }
 
@@ -55,18 +71,9 @@ namespace monopoly
 
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
-            _spriteBatch.Draw(
-                ballTexture,
-                ballPosition,
-                null,
-                Color.White,
-                0f,
-                new Vector2(ballTexture.Width / 2, ballTexture.Height / 2),
-                Vector2.One,
-                SpriteEffects.None,
-                0f
-            );
 
+            gameSystem.draw(_spriteBatch);
+            
             _spriteBatch.End();
             base.Draw(gameTime);
         }

@@ -1,0 +1,7 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/pengy/source/repos/monopoly/monopoly/Content/ball.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/ball.xnb","TextureProcessor","Texture2DContent",8368,16469,0.2092197
+"C:/Users/pengy/source/repos/monopoly/monopoly/Content/battleship.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/battleship.xnb","TextureProcessor","Texture2DContent",24499,896085,0.0424966
+"C:/Users/pengy/source/repos/monopoly/monopoly/Content/hat.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/hat.xnb","TextureProcessor","Texture2DContent",20591,896085,0.0229646
+"C:/Users/pengy/source/repos/monopoly/monopoly/Content/monopoly.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/monopoly.xnb","TextureProcessor","Texture2DContent",16765,553045,0.0151311
+"C:/Users/pengy/source/repos/monopoly/monopoly/Content/racecar.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/racecar.xnb","TextureProcessor","Texture2DContent",10085,896085,0.0160753
+"C:/Users/pengy/source/repos/monopoly/monopoly/Content/thimble.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/thimble.xnb","TextureProcessor","Texture2DContent",48621,171113,0.0064745

@@ -24,3 +24,8 @@ C:\Users\pengy\source\repos\monopoly\monopoly\obj\Debug\net6.0\monopoly.pdb
 C:\Users\pengy\source\repos\monopoly\monopoly\obj\Debug\net6.0\monopoly.genruntimeconfig.cache
 C:\Users\pengy\source\repos\monopoly\monopoly\obj\Debug\net6.0\ref\monopoly.dll
 C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\ball.xnb
+C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\monopoly.xnb
+C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\battleship.xnb
+C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\hat.xnb
+C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\racecar.xnb
+C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\thimble.xnb

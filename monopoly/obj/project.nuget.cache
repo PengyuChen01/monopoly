@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "WpsSC4iOJ4DzfyzGMpIX/or9h6XK35pFujhVS8tiMWc9Il5CNk8nneCIvpYQp2bNXOMKVRitchsbyQj+8jL+pA==",
+  "dgSpecHash": "XxjDBkZ1tnR/4VWYtCzm4dDwhzhfH/XoDOK0jvD53hDXPGiW/591nB0B799xv1RAGLrkFQQJOM9E9Ai7LztC/Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\pengy\\source\\repos\\monopoly\\monopoly\\monopoly.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\pengy\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
+    "C:\\Users\\pengy\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
     "C:\\Users\\pengy\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
-    "C:\\Users\\pengy\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+    "C:\\Users\\pengy\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\pengy\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
+    "C:\\Users\\pengy\\.nuget\\packages\\system.runtime\\4.3.1\\system.runtime.4.3.1.nupkg.sha512",
+    "C:\\Users\\pengy\\.nuget\\packages\\system.runtime.extensions\\4.3.1\\system.runtime.extensions.4.3.1.nupkg.sha512"
   ],
   "logs": []
 }
