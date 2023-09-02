@@ -40,12 +40,21 @@ class MonopolyGamesSystem : IGameSystem, IMonopolyDelegate
         addTile(0,new StartTile(0));
         addTile(30,new PoliceTile(0));
         addTile(20,new ParkingTile(0));
-        IPlayer player = new Player(0);
-        IPlayer player2 = new Player(1);
        
-        players.Add(new StateStart(player));
-        sprites.Add(player); 
-
+        IPlayer player1 = new Player(0);
+        IPlayer player2 = new Player(1);
+        IPlayer player3 = new Player(2);
+        IPlayer player4 = new Player(3);
+       
+      
+        players.Add(new StateStart(player1));
+        players.Add(new StateStart(player2));
+        players.Add(new StateStart(player3));
+        players.Add(new StateStart(player4));
+        sprites.Add(player1);
+        sprites.Add(player2);
+        sprites.Add(player3);
+        sprites.Add(player4);
     }
 
 
