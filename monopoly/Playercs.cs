@@ -12,7 +12,7 @@ class Player : IPlayer
     Rectangle desination2 = new Rectangle(10, 0, 20, 20);
     Rectangle desination3 = new Rectangle(10, 10, 20, 20);
     Rectangle desination4 = new Rectangle(0, 10, 20, 20);
-    Point battleshipPosition = desination4.Location;
+ //   Point battleshipPosition = desination4.Location;
     public int PlayerID => playerId;
     private int tile;
     public int Tile { 
