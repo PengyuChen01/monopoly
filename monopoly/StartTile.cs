@@ -15,6 +15,9 @@ class StartTile : ITile
     private int id;
 
     int ITile.ID => id;
+
+    public int BelongTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
     Rectangle source = new Rectangle(0, 7, 33, 33);
     Rectangle desination = new Rectangle(0, 0, 33, 33);
 
@@ -52,6 +55,10 @@ class StartTile : ITile
         return desination.Center;
     }
 
+    public void DosomethingToPlayer(IPlayer player)
+    {
+        throw new NotImplementedException();
+    }
 }
 
 
