@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using System;
 using System.Diagnostics;
+using System.Net.Mime;
 
 namespace monopoly
 {
@@ -17,7 +18,9 @@ namespace monopoly
         private SpriteBatch _spriteBatch;
 
         private IGameSystem gameSystem;
-
+        public static SpriteFont font;
+        
+        
         Texture2D gameBoard;
         public Game1()
         {
@@ -25,7 +28,7 @@ namespace monopoly
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
-
+     
         public static float scale = 2.1f;
         public static Texture2D boardTexture = null;
         public static Texture2D hatTexture = null;
@@ -56,6 +59,7 @@ namespace monopoly
             racecarTexture = Content.Load<Texture2D>("racecar");
             thimbleTexture = Content.Load<Texture2D>("thimble");
             battleshipTexture = Content.Load<Texture2D>("battleship");
+            font = Content.Load<SpriteFont>("text");
             gameSystem.setUp();
         }
 
@@ -73,7 +77,7 @@ namespace monopoly
             _spriteBatch.Begin();
 
             gameSystem.draw(_spriteBatch);
-            
+     
             _spriteBatch.End();
             base.Draw(gameTime);
         }

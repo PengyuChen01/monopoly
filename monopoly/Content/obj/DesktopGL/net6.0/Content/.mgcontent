@@ -9,9 +9,11 @@
     <File>C:/Users/pengy/source/repos/monopoly/monopoly/Content/hat.png</File>
     <File>C:/Users/pengy/source/repos/monopoly/monopoly/Content/monopoly.png</File>
     <File>C:/Users/pengy/source/repos/monopoly/monopoly/Content/racecar.png</File>
+    <File>C:/Users/pengy/source/repos/monopoly/monopoly/Content/text.spritefont</File>
     <File>C:/Users/pengy/source/repos/monopoly/monopoly/Content/thimble.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -73,6 +73,13 @@
 /processorParam:TextureFormat=Color
 /build:racecar.png
 
+#begin text.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:text.spritefont
+
 #begin thimble.png
 /importer:TextureImporter
 /processor:TextureProcessor

@@ -6,4 +6,5 @@ interface IMonopolyDelegate
     void nextTurn();
 
     Point getPlayerPositionOnTile(int tileId, int playerId);
+    void DoSomethingToPlayerOnTile(IPlayer player);
 }

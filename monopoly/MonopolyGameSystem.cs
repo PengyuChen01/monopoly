@@ -55,6 +55,11 @@ class MonopolyGamesSystem : IGameSystem, IMonopolyDelegate
         sprites.Add(player2);
         sprites.Add(player3);
         sprites.Add(player4);
+        player1.Position = this.getPlayerPositionOnTile(player1.Tile, player1.PlayerID);
+        player2.Position = this.getPlayerPositionOnTile(player2.Tile, player2.PlayerID);
+        player3.Position = this.getPlayerPositionOnTile(player3.Tile, player3.PlayerID);
+        player4.Position = this.getPlayerPositionOnTile(player4.Tile, player4.PlayerID);
+
     }
 
 
@@ -75,11 +80,16 @@ class MonopolyGamesSystem : IGameSystem, IMonopolyDelegate
 
     void IMonopolyDelegate.nextTurn()
     {
-        turns = (turns + 1) % turns;
+        turns = (turns + 1) % 4; // four people take turns
     }
 
     public Point getPlayerPositionOnTile(int tileId, int playerId)
     {
         return tiles[tileId].position(playerId);
+    }
+
+    public void DoSomethingToPlayerOnTile(IPlayer player)
+    {
+        throw new NotImplementedException();
     }
 }

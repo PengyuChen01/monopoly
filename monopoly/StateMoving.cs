@@ -11,13 +11,12 @@ class StateMoving : IRoundState
     {
         this.player = player;
         this.player.Tile = (this.player.Tile + dice) % 40;
-        Debug.WriteLine("Move " + player.Tile);
+        
     }
     IRoundState IRoundState.Update(IMonopolyDelegate monoply)
-    {   
-      
+    {
 
-
+        monoply.nextTurn(); 
         return new StateStart(player);
     }
 }

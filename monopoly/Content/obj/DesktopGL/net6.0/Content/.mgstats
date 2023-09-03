@@ -4,4 +4,5 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/pengy/source/repos/monopoly/monopoly/Content/hat.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/Content/hat.xnb","TextureProcessor","Texture2DContent",46274,217573,0.0088806
 "C:/Users/pengy/source/repos/monopoly/monopoly/Content/monopoly.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/Content/monopoly.xnb","TextureProcessor","Texture2DContent",16765,553045,0.2684151
 "C:/Users/pengy/source/repos/monopoly/monopoly/Content/racecar.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/Content/racecar.xnb","TextureProcessor","Texture2DContent",51425,240885,0.0202724
+"C:/Users/pengy/source/repos/monopoly/monopoly/Content/text.spritefont","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/Content/text.xnb","FontDescriptionProcessor","SpriteFontContent",2068,21535,0.2461262
 "C:/Users/pengy/source/repos/monopoly/monopoly/Content/thimble.png","C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/Content/thimble.xnb","TextureProcessor","Texture2DContent",48621,171113,0.218163

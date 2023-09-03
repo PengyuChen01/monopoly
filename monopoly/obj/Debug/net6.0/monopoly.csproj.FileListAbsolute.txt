@@ -29,3 +29,4 @@ C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\battleshi
 C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\hat.xnb
 C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\racecar.xnb
 C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\thimble.xnb
+C:\Users\pengy\source\repos\monopoly\monopoly\bin\Debug\net6.0\Content\text.xnb
