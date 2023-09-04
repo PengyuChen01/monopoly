@@ -10,13 +10,12 @@ namespace monopoly
 {
     public class Game1 : Game
     {
-        Texture2D ballTexture;
-        Vector2 ballPosition;
-        float ballSpeed;
+       
+     
+      
         // drawing
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
-
         private IGameSystem gameSystem;
         public static SpriteFont font;
         
@@ -28,8 +27,8 @@ namespace monopoly
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
         }
-     
-        public static float scale = 2.1f;
+        // initialize the scale of board, sprites of board and player
+        public static float scale = 1.0f;
         public static Texture2D boardTexture = null;
         public static Texture2D hatTexture = null;
         public static Texture2D racecarTexture = null;
@@ -41,9 +40,11 @@ namespace monopoly
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            ballPosition = new Vector2(_graphics.PreferredBackBufferWidth / 2,
-                _graphics.PreferredBackBufferHeight / 2);
-            ballSpeed = 100f;
+            _graphics.IsFullScreen = false;
+            _graphics.PreferredBackBufferWidth = 1920;
+            _graphics.PreferredBackBufferHeight = 1080;
+            _graphics.ApplyChanges();
+
             gameSystem = new MonopolyGamesSystem();
             base.Initialize();
         }
@@ -53,8 +54,9 @@ namespace monopoly
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            ballTexture = Content.Load<Texture2D>("ball");
-            boardTexture = Content.Load<Texture2D>("monopoly");
+   
+          //  boardTexture = Content.Load<Texture2D>("monopoly");
+            boardTexture = Content.Load<Texture2D>("board");
             hatTexture = Content.Load<Texture2D>("hat");
             racecarTexture = Content.Load<Texture2D>("racecar");
             thimbleTexture = Content.Load<Texture2D>("thimble");

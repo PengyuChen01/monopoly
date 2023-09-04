@@ -9,7 +9,7 @@ using System.Diagnostics;
 using System.Text.Json.Serialization.Metadata;
 using static System.Formats.Asn1.AsnWriter;
 
-class StartTile : ITile
+class StartTile : CornerTile, ITile
 {
 
     private int id;
@@ -18,8 +18,8 @@ class StartTile : ITile
 
     public int BelongTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-    Rectangle source = new Rectangle(0, 7, 33, 33);
-    Rectangle desination = new Rectangle(0, 0, 33, 33);
+    Rectangle source = new Rectangle(0, 7, 79, 59); 
+    Rectangle desination = new Rectangle(0, 0, 79, 59);
 
 
     public StartTile(int id)
@@ -33,7 +33,7 @@ class StartTile : ITile
     }
     private Rectangle srcRectFromID()
     {
-        return new Rectangle(33 + 9 * 16, 7 + 33 + 9 * 16, 33, 33);
+        return new Rectangle(33 + 9 * 16, 7 + 33 + 9 * 16, 79, 59);
     }
     private Rectangle dstRectFromID()
     {

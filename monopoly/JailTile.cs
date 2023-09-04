@@ -9,15 +9,17 @@ using System.Diagnostics;
 using System.Text.Json.Serialization.Metadata;
 using static System.Formats.Asn1.AsnWriter;
 
-class JailTile : ITile
+class JailTile : CornerTile,ITile
 {
 
     private int id;
 
     int ITile.ID => id;
-    Rectangle source = new Rectangle(0, 7, 33, 33);
-    Rectangle desination = new Rectangle(0, 0, 33, 33);
 
+    public int BelongTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+    Rectangle source; 
+    Rectangle destination;
 
     public JailTile(int id)
     {
@@ -25,11 +27,12 @@ class JailTile : ITile
         // e.g. gameBoard = Content.Load<Texture2D>("monopoly");
         this.id = id;
         source = this.srcRectFromID();
-        desination = this.dstRectFromID();
+        destination = this.dstRectFromID();
         
     }
     private Rectangle srcRectFromID()
     {
+        // intialize the position of jail tile in the board without moving
         return new Rectangle(0, 7+ 33 + 9*16, 33, 33);
     }
     private Rectangle dstRectFromID()
@@ -42,14 +45,20 @@ class JailTile : ITile
     public void Draw(SpriteBatch batch)
     {
 
-        batch.Draw(Game1.boardTexture, desination, source, Color.White);
+        batch.Draw(Game1.boardTexture, destination, source, Color.White);
         
     }
 
     public Point position(int playerId)
     {
-        return desination.Center;
+        return destination.Center;
     }
+    /**
+    public void DosomethingToPlayer(IPlayer player)
+    {
+        throw new NotImplementedException();
+    }
+    **/
 }
 
 

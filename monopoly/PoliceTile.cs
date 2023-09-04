@@ -9,14 +9,17 @@ using System.Diagnostics;
 using System.Text.Json.Serialization.Metadata;
 using static System.Formats.Asn1.AsnWriter;
 
-class PoliceTile : ITile
+class PoliceTile : CornerTile,ITile
 {
 
     private int id;
 
     int ITile.ID => id;
-    Rectangle source = new Rectangle(0, 7, 33, 33);
-    Rectangle desination = new Rectangle(0, 0, 33, 33);
+
+    public int BelongTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+    Rectangle source = new Rectangle(0, 7, 79, 59);
+    Rectangle desination = new Rectangle(0, 0, 79, 59);
 
 
     public PoliceTile(int id)
@@ -30,7 +33,7 @@ class PoliceTile : ITile
     }
     private Rectangle srcRectFromID()
     {
-        return new Rectangle(33 + 9 * 16, 7, 33, 33);
+        return new Rectangle(33 + 9 * 16, 7, 79, 59);
     }
     private Rectangle dstRectFromID()
     {
@@ -49,6 +52,11 @@ class PoliceTile : ITile
     public Point position(int playerId)
     {
         return desination.Center;
+    }
+
+    public void DosomethingToPlayer(IPlayer player)
+    {
+        throw new NotImplementedException();
     }
 }
 

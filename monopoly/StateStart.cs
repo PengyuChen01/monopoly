@@ -11,7 +11,7 @@ class StateStart : IRoundState
     }
 
     bool isKeyDown = false;
-
+     
     public IRoundState Update(IMonopolyDelegate monopoly)
     {
         var kstate = Keyboard.GetState();

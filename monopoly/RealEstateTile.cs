@@ -9,14 +9,17 @@ using System.Diagnostics;
 using System.Text.Json.Serialization.Metadata;
 using static System.Formats.Asn1.AsnWriter;
 
-class RealEstateTile : ITile
+class RealEstateTile : NonCornerTile,ITile
 {
 
     private int id;
    
     int ITile.ID => id;
-    Rectangle source = new Rectangle(0, 7, 33, 33);
-    Rectangle desination = new Rectangle(0, 0, 33, 33);
+
+    public int BelongTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+    Rectangle source = new Rectangle(0, 0, 79, 59);
+    Rectangle desination = new Rectangle(0, 0, 79, 59);
    
 
     public RealEstateTile(int id)
@@ -30,25 +33,35 @@ class RealEstateTile : ITile
     }
     private Rectangle srcRectFromID()
     {
+        // modify the size of the tile except the corner
         var map = new Dictionary<int, Rectangle>();
         if(this.id <= 10)
         {
-            
-            int x = 33 + (9 - this.id) * 16;
-            int y = 7 + 9 * 16 + 33;
-            return new Rectangle(x, y, 16, 33);
+
+             int x = 33 + (9 - this.id) * 16;
+             int y = 7 + 9 * 16 + 33;
+            /**  int x = 1404;
+           int y = 1404;
+         **/
+            return new Rectangle(x, y, 79, 59);
         }
         else if(this.id <= 20)
         {
-            int x = 0;
+             int x = 0;
             int y = 7 + (19-this.id)* 16 + 33;
-            return new Rectangle(x, y, 33, 16);
+            /**  int x = 1404;
+               int y = 1404;
+             **/
+            return new Rectangle(x, y, 79, 59);
         }
         else if (this.id <= 30)
         {
             int x = 33 + (this.id - 21) * 16;
             int y = 7;
-            return new Rectangle(x, y, 16, 33);
+          /**  int x = 1404;
+            int y = 1404;
+          **/
+            return new Rectangle(x, y, 79, 59);
   
            
         }
@@ -56,7 +69,7 @@ class RealEstateTile : ITile
         {
             int x = 33 + 16 * 9;
             int y = 7 + (this.id-31) * 16 + 33;
-            return new Rectangle(x, y, 33, 16);
+            return new Rectangle(x, y, 79, 59);
         }
     }
     private Rectangle dstRectFromID()
@@ -69,21 +82,41 @@ class RealEstateTile : ITile
     public void Draw(SpriteBatch batch)
     {
         // fix the problem of rotation the board
-        if (this.id > 20 && this.id < 30)
-        {
-            batch.Draw(Game1.boardTexture, desination, source, Color.White, 3.1415926f, new Vector2(desination.Width / 2, desination.Height / 2), 0, 0);
-            batch.DrawString(Game1.font, "" + id, new Vector2(desination.Location.X,desination.Location.Y), Color.Gray);
-        }
-        else
-        {
+       // if (this.id > 20 && this.id < 30)
+        //{
             batch.Draw(Game1.boardTexture, desination, source, Color.White);
-            batch.DrawString(Game1.font, "" + id, new Vector2(desination.Location.X, desination.Location.Y), Color.Gray);
-        }
+            //batch.DrawString(Game1.font, "" + id, new Vector2(desination.Location.X,desination.Location.Y), Color.Gray);
+        //}
+       // else
+        //{
+        //    batch.Draw(Game1.boardTexture, desination, source, Color.White);
+           // batch.DrawString(Game1.font, "" + id, new Vector2(desination.Location.X, desination.Location.Y), Color.Gray);
+        //}
     }
 
     public Point position(int playerId)
     {
         return desination.Center;
+    }
+
+    public void DosomethingToPlayer(IPlayer player)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void Draw(SpriteBatch batch)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override Point position(int playerId)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void DosomethingToPlayer(IPlayer player)
+    {
+        throw new NotImplementedException();
     }
 }
 
