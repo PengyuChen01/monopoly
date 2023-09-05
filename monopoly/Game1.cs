@@ -28,7 +28,7 @@ namespace monopoly
             IsMouseVisible = true;
         }
         // initialize the scale of board, sprites of board and player
-        public static float scale = 1.0f;
+        public static float scale = 0.75f; // 1404 (picture size) to 1080 (screen size) 
         public static Texture2D boardTexture = null;
         public static Texture2D hatTexture = null;
         public static Texture2D racecarTexture = null;
@@ -41,8 +41,8 @@ namespace monopoly
         {
             // TODO: Add your initialization logic here
             _graphics.IsFullScreen = false;
-            _graphics.PreferredBackBufferWidth = 1920;
-            _graphics.PreferredBackBufferHeight = 1080;
+            _graphics.PreferredBackBufferWidth = 1920; // window wideth
+            _graphics.PreferredBackBufferHeight = 1080; // window height
             _graphics.ApplyChanges();
 
             gameSystem = new MonopolyGamesSystem();

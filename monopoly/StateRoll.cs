@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text.Json.Serialization.Metadata;
@@ -10,6 +11,12 @@ class StateRoll : IRoundState
     {
         this._player = player;
     }
+
+    public void Draw(SpriteBatch batch)
+    {
+        
+    }
+
     public IRoundState Update(IMonopolyDelegate monoply)
     {
         Random random = new Random();

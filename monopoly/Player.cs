@@ -46,7 +46,8 @@ class Player : IPlayer
     }
     public void Draw(SpriteBatch batch)
     {
-        batch.Draw(textures[playerId], destination, null, Color.White);
+        batch.Draw(textures[playerId], destination, null, Color.White); // draw player image
+
     
     }
 

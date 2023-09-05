@@ -67,6 +67,7 @@ class MonopolyGamesSystem : IGameSystem, IMonopolyDelegate
     public void update()
     {
         players[turns] = players[turns].Update(this);
+
     }
 
 
@@ -74,8 +75,9 @@ class MonopolyGamesSystem : IGameSystem, IMonopolyDelegate
     {
         foreach (IDisplayable sprite in sprites)
         {
-           sprite.Draw(batch);
+            sprite.Draw(batch);
         }
+        players[turns].Draw(batch); // print people's name on it's own turn.
     }
 
     void IMonopolyDelegate.nextTurn()

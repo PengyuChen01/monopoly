@@ -9,26 +9,33 @@ using System.Diagnostics;
 using System.Text.Json.Serialization.Metadata;
 using static System.Formats.Asn1.AsnWriter;
 
-class RealEstateTile : NonCornerTile,ITile
+class RealEstateTile : NonCornerTile
 {
 
     private int id;
    
-    int ITile.ID => id;
+    int ID => id;
 
-    public int BelongTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public override int BelongTo { get => belongTo; set => belongTo = value; }
+    private int belongTo = -1;
+    Rectangle source = new Rectangle(0, 0, 108, 216); // png starting point
+    Rectangle destination = new Rectangle(0, 0, Width, Height); // computer starting point
 
-    Rectangle source = new Rectangle(0, 0, 79, 59);
-    Rectangle desination = new Rectangle(0, 0, 79, 59);
-   
+    Texture2D[] textures =
+    {
+        Game1.battleshipTexture,
+        Game1.thimbleTexture,
+        Game1.hatTexture,
+        Game1.racecarTexture
 
+    };
     public RealEstateTile(int id)
     {
         //load your texture
         // e.g. gameBoard = Content.Load<Texture2D>("monopoly");
         this.id = id;
         source = this.srcRectFromID();
-        desination = this.dstRectFromID();
+        destination = this.dstRectFromID();
        
     }
     private Rectangle srcRectFromID()
@@ -38,85 +45,61 @@ class RealEstateTile : NonCornerTile,ITile
         if(this.id <= 10)
         {
 
-             int x = 33 + (9 - this.id) * 16;
-             int y = 7 + 9 * 16 + 33;
-            /**  int x = 1404;
-           int y = 1404;
-         **/
-            return new Rectangle(x, y, 79, 59);
+             int x = Height + (9 - this.id) * Width;
+             int y = 9 * Width + Height;
+        
+         
+            return new Rectangle(x, y, Width, Height);
         }
         else if(this.id <= 20)
         {
              int x = 0;
-            int y = 7 + (19-this.id)* 16 + 33;
+            int y =  (19-this.id)* Width + Height;
             /**  int x = 1404;
                int y = 1404;
              **/
-            return new Rectangle(x, y, 79, 59);
+            return new Rectangle(x, y, Height, Width);
         }
         else if (this.id <= 30)
         {
-            int x = 33 + (this.id - 21) * 16;
-            int y = 7;
-          /**  int x = 1404;
-            int y = 1404;
-          **/
-            return new Rectangle(x, y, 79, 59);
+            int x = Height + (this.id - 21) * Width;
+            int y = 0;
+            return new Rectangle(x, y, Width, Height);
   
            
         }
         else
         {
-            int x = 33 + 16 * 9;
-            int y = 7 + (this.id-31) * 16 + 33;
-            return new Rectangle(x, y, 79, 59);
+            int x = Height + Width * 9;
+            int y =  (this.id-31) * Width + Height;
+            return new Rectangle(x, y, Height, Width);
         }
     }
     private Rectangle dstRectFromID()
     {
+        // draw in computer 
         return new Rectangle((int)(Game1.scale * source.X), (int)(Game1.scale*source .Y), (int)(Game1.scale * source.Width), (int)(Game1.scale * source.Height));
-      
     }
 
-
-    public void Draw(SpriteBatch batch)
-    {
-        // fix the problem of rotation the board
-       // if (this.id > 20 && this.id < 30)
-        //{
-            batch.Draw(Game1.boardTexture, desination, source, Color.White);
-            //batch.DrawString(Game1.font, "" + id, new Vector2(desination.Location.X,desination.Location.Y), Color.Gray);
-        //}
-       // else
-        //{
-        //    batch.Draw(Game1.boardTexture, desination, source, Color.White);
-           // batch.DrawString(Game1.font, "" + id, new Vector2(desination.Location.X, desination.Location.Y), Color.Gray);
-        //}
-    }
-
-    public Point position(int playerId)
-    {
-        return desination.Center;
-    }
-
-    public void DosomethingToPlayer(IPlayer player)
-    {
-        throw new NotImplementedException();
-    }
 
     public override void Draw(SpriteBatch batch)
     {
-        throw new NotImplementedException();
+            batch.Draw(Game1.boardTexture, destination, source, Color.White);
+        if (belongTo >= 0)
+        {
+            batch.Draw(textures[belongTo], destination, null, Color.White * 0.25f);
+        }
     }
 
     public override Point position(int playerId)
     {
-        throw new NotImplementedException();
+        // tile's center
+        return new Point(destination.Center.X, destination.Center.Y);
     }
 
     public override void DosomethingToPlayer(IPlayer player)
     {
-        throw new NotImplementedException();
+        
     }
 }
 

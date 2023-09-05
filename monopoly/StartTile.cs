@@ -9,17 +9,16 @@ using System.Diagnostics;
 using System.Text.Json.Serialization.Metadata;
 using static System.Formats.Asn1.AsnWriter;
 
-class StartTile : CornerTile, ITile
+class StartTile : CornerTile
 {
 
     private int id;
 
-    int ITile.ID => id;
+    int ID => id;
 
-    public int BelongTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-    Rectangle source = new Rectangle(0, 7, 79, 59); 
-    Rectangle desination = new Rectangle(0, 0, 79, 59);
+    Rectangle source = new Rectangle(0, 0, 108, 216); 
+    Rectangle destination;
 
 
     public StartTile(int id)
@@ -28,12 +27,12 @@ class StartTile : CornerTile, ITile
         // e.g. gameBoard = Content.Load<Texture2D>("monopoly");
         this.id = id;
         source = this.srcRectFromID();
-        desination = this.dstRectFromID();
+        destination = this.dstRectFromID();
 
     }
     private Rectangle srcRectFromID()
     {
-        return new Rectangle(33 + 9 * 16, 7 + 33 + 9 * 16, 79, 59);
+        return new Rectangle(distanceToCorner, distanceToCorner, Width, Height);
     }
     private Rectangle dstRectFromID()
     {
@@ -42,23 +41,25 @@ class StartTile : CornerTile, ITile
     }
 
 
-    public void Draw(SpriteBatch batch)
+    public override void Draw(SpriteBatch batch)
     {
 
-        batch.Draw(Game1.boardTexture, desination, source, Color.White);
+        batch.Draw(Game1.boardTexture, destination, source, Color.White);
 
     }
 
-    Point ITile.position(int playerId)
+    public override Point position(int playerId)
     {
         // switch 每个不同的id
-        return desination.Center;
+        return destination.Center;
     }
 
-    public void DosomethingToPlayer(IPlayer player)
+     public override void DosomethingToPlayer(IPlayer player)
     {
         throw new NotImplementedException();
     }
+
+    
 }
 
 

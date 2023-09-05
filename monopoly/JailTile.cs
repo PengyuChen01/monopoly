@@ -9,14 +9,14 @@ using System.Diagnostics;
 using System.Text.Json.Serialization.Metadata;
 using static System.Formats.Asn1.AsnWriter;
 
-class JailTile : CornerTile,ITile
+class JailTile : CornerTile
 {
 
     private int id;
 
-    int ITile.ID => id;
+    int ID => id;
 
-    public int BelongTo { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
 
     Rectangle source; 
     Rectangle destination;
@@ -33,7 +33,7 @@ class JailTile : CornerTile,ITile
     private Rectangle srcRectFromID()
     {
         // intialize the position of jail tile in the board without moving
-        return new Rectangle(0, 7+ 33 + 9*16, 33, 33);
+        return new Rectangle(0,  distanceToCorner, Width, Height);
     }
     private Rectangle dstRectFromID()
     {
@@ -42,23 +42,26 @@ class JailTile : CornerTile,ITile
     }
 
 
-    public void Draw(SpriteBatch batch)
+    public override void Draw(SpriteBatch batch)
     {
 
         batch.Draw(Game1.boardTexture, destination, source, Color.White);
         
     }
 
-    public Point position(int playerId)
+    public override Point position(int playerId)
     {
         return destination.Center;
     }
-    /**
-    public void DosomethingToPlayer(IPlayer player)
+
+  
+
+    
+    public override void DosomethingToPlayer(IPlayer player)
     {
-        throw new NotImplementedException();
+   throw new NotImplementedException();
     }
-    **/
+
 }
 
 

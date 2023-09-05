@@ -7,23 +7,20 @@ abstract class CornerTile : ITile
 {   // dimension of the corner tile
     private int id;
 
-    public int BelongTo { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public static int Width = 216;
-    public static int Height = 216;
+    public int BelongTo { get => -1; set { } }
+
+    public static int Width = 198;
+    public static int Height = 198;
+    public static int pictureSize = 1404;
+    public static int distanceToCorner = 1206;
     int ITile.ID => id;
 
-    public void Draw(SpriteBatch batch)
-    {
-        throw new System.NotImplementedException();
-    }
+    public abstract void Draw(SpriteBatch batch);
 
-    public Point position(int playerId)
-    {
-        throw new System.NotImplementedException();
-    }
 
-    void ITile.DosomethingToPlayer(IPlayer player)
-    {
-        throw new System.NotImplementedException();
-    }
+    public abstract Point position(int playerId);
+
+
+    public abstract void DosomethingToPlayer(IPlayer player);
+   
 }
