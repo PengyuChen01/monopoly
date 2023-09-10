@@ -11,7 +11,7 @@ abstract class CornerTile : ITile
 
     public static int Width = 198;
     public static int Height = 198;
-    public static int pictureSize = 1404;
+    public static int pictureSize = 1404; // whole picture
     public static int distanceToCorner = 1206;
     int ITile.ID => id;
 

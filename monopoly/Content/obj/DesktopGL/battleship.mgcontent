@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/pengy/source/repos/monopoly/monopoly/Content/battleship.png</SourceFile>
-  <SourceTime>2023-08-12T15:15:15.9951938-04:00</SourceTime>
+  <SourceTime>2023-08-14T15:04:32.5436875-04:00</SourceTime>
   <DestFile>C:/Users/pengy/source/repos/monopoly/monopoly/Content/bin/DesktopGL/battleship.xnb</DestFile>
-  <DestTime>2023-08-12T16:11:15.9154352-04:00</DestTime>
+  <DestTime>2023-09-08T19:15:37.8272368-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

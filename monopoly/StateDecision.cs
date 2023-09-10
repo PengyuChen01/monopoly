@@ -5,7 +5,7 @@ class StateDecision : IRoundState
 {
     public void Draw(SpriteBatch batch)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public IRoundState Update(IMonopolyDelegate monoply)

@@ -35,6 +35,7 @@ namespace monopoly
         public static Texture2D battleshipTexture = null;
         public static Texture2D thimbleTexture = null;
 
+
        
 
         protected override void Initialize()

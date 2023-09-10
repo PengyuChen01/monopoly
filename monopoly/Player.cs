@@ -24,6 +24,8 @@ class Player : IPlayer
         Game1.hatTexture,
         Game1.racecarTexture
 
+
+
     };
  
     public int PlayerID => playerId;

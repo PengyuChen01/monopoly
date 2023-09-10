@@ -17,9 +17,9 @@ class StartTile : CornerTile
     int ID => id;
 
 
-    Rectangle source = new Rectangle(0, 0, 108, 216); 
+    Rectangle source = new Rectangle(0, 0, Constant.srcNonCorTileWidth, Constant.srcNonCorTileHeight); 
     Rectangle destination;
-
+    Rectangle middlePart = new Rectangle(108, 108, 108, 108);
 
     public StartTile(int id)
     {
@@ -45,6 +45,8 @@ class StartTile : CornerTile
     {
 
         batch.Draw(Game1.boardTexture, destination, source, Color.White);
+        Rectangle actualMid = new Rectangle((int)Game1.scale * middlePart.X, (int)Game1.scale * middlePart.Y, (int)Game1.scale * middlePart.Width, (int)Game1.scale * middlePart.Height);
+        batch.Draw(Game1.boardTexture, actualMid, middlePart, Color.White);
 
     }
 

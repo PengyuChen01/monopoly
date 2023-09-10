@@ -82,7 +82,7 @@ class MonopolyGamesSystem : IGameSystem, IMonopolyDelegate
 
     void IMonopolyDelegate.nextTurn()
     {
-        turns = (turns + 1) % 4; // four people take turns
+        turns = (turns + 1) % Constant.numOfPlayer; // four people take turns
     }
 
     public Point getPlayerPositionOnTile(int tileId, int playerId)

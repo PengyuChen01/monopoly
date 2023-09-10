@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using monopoly;
 using System.Text.Json.Serialization.Metadata;
 
 class StateStart : IRoundState
@@ -27,6 +28,7 @@ class StateStart : IRoundState
 
     public void Draw(SpriteBatch batch)
     {
-       
+        batch.DrawString(Game1.font, "Player " + player.PlayerID 
+          + "\nplease press enter to roll dice!", new Vector2(Constant.desinationX, Constant.desinationY), Color.Black);
     }
 }

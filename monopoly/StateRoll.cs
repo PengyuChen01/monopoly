@@ -20,7 +20,7 @@ class StateRoll : IRoundState
     public IRoundState Update(IMonopolyDelegate monoply)
     {
         Random random = new Random();
-        int dice =  random.Next(1,6);
+        int dice =  random.Next(1,6); // random 1 to 6
 
         return new StateMoving(_player, dice);
     }

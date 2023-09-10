@@ -20,7 +20,8 @@ class RealEstateTile : NonCornerTile
     private int belongTo = -1;
     Rectangle source = new Rectangle(0, 0, 108, 216); // png starting point
     Rectangle destination = new Rectangle(0, 0, Width, Height); // computer starting point
-
+    
+   
     Texture2D[] textures =
     {
         Game1.battleshipTexture,
@@ -75,6 +76,7 @@ class RealEstateTile : NonCornerTile
             return new Rectangle(x, y, Height, Width);
         }
     }
+
     private Rectangle dstRectFromID()
     {
         // draw in computer 
@@ -85,10 +87,12 @@ class RealEstateTile : NonCornerTile
     public override void Draw(SpriteBatch batch)
     {
             batch.Draw(Game1.boardTexture, destination, source, Color.White);
-        if (belongTo >= 0)
-        {
-            batch.Draw(textures[belongTo], destination, null, Color.White * 0.25f);
-        }
+        /*   if (belongTo >= 0)
+           {
+               batch.Draw(textures[belongTo], destination, null, Color.White * 0.25f);
+           }
+          */
+      
     }
 
     public override Point position(int playerId)

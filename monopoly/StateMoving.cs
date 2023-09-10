@@ -1,23 +1,27 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using monopoly;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
 using System.Text.Json.Serialization.Metadata;
 
 class StateMoving : IRoundState
 {   
     private IPlayer player;
+    
     public StateMoving(IPlayer player,int dice)
     {
         this.player = player;
-        this.player.Tile = (this.player.Tile + dice) % 40;
-        // TODO: Add a Constants class and move 40 into the class with a proper name
+        this.player.Tile = (this.player.Tile + dice) % Constant.totalNumOfTile; // After rolling the dice, the player lands on tile{tile Number}
+
     }
 
     public void Draw(SpriteBatch batch)
     {
+        
         /*
         if (this.id > 20 && this.id < 30)
         {
