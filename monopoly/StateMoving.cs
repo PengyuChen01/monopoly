@@ -15,7 +15,8 @@ class StateMoving : IRoundState
     public StateMoving(IPlayer player,int dice)
     {
         this.player = player;
-        this.player.Tile = (this.player.Tile + dice) % Constant.totalNumOfTile; // After rolling the dice, the player lands on tile{tile Number}
+        this.player.Tile = (this.player.Tile + dice) % Constant.totalNumOfTile;
+        // After rolling the dice, the player lands on tile{tile Number}
 
     }
 
@@ -36,10 +37,11 @@ class StateMoving : IRoundState
         */
     }
 
-    IRoundState IRoundState.Update(IMonopolyDelegate monoply)
+    IRoundState IRoundState.Update(IMonopolyDelegate monopoly)
     {
-
-        monoply.nextTurn(); 
-        return new StateStart(player);
+        //update  player position before turn into next turn
+        player.Position = monopoly.getPlayerPositionOnTile(player.Tile, player.PlayerID); 
+        monopoly.DoSomethingToPlayerOnTile(player);
+        return new StateDecision(player);
     }
 }

@@ -29,6 +29,7 @@ class StateStart : IRoundState
     public void Draw(SpriteBatch batch)
     {
         batch.DrawString(Game1.font, "Player " + player.PlayerID 
-          + "\nplease press enter to roll dice!", new Vector2(Constant.desinationX, Constant.desinationY), Color.Black);
+          + "\nplease press enter to roll dice!", new Vector2(Constant.strRollDiceDesX, Constant.strRollDiceDesY), Color.Black); // display ask player to roll in the right
+        //batch.DrawString(Game1.font, "Player " + "0:", new Vector2(Constant.strRollDiceDesX,Constant.strRollDiceDesY),Color.Black);
     }
 }

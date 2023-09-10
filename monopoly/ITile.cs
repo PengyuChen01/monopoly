@@ -13,7 +13,7 @@ interface ITile : IDisplayable
                                //   -1: can not be trade: start, jail, card
                                //   -2: open to trade
                                //   0-3 : owned by someone (players) 
-    
+    String toString();
 }
 
 

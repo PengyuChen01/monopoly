@@ -11,4 +11,9 @@ public interface IPlayer : IDisplayable
 
     Point Position { set; }
     int Money { get; set; }// get money, set money function
+    int NumOfTilePlayerOwn { get; set; }
+    string toString();
+    string TileDescription { set; }
+
+  
 }

@@ -22,5 +22,9 @@ abstract class CornerTile : ITile
 
 
     public abstract void DosomethingToPlayer(IPlayer player);
-   
+
+    public string toString()
+    {
+        throw new System.NotImplementedException();
+    }
 }

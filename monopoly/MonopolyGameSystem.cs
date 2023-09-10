@@ -92,6 +92,6 @@ class MonopolyGamesSystem : IGameSystem, IMonopolyDelegate
 
     public void DoSomethingToPlayerOnTile(IPlayer player)
     {
-        throw new NotImplementedException();
+        this.tiles[player.Tile].DosomethingToPlayer(player); //tile 和player 互动
     }
 }

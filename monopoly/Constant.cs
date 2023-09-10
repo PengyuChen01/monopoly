@@ -12,6 +12,6 @@ public static class Constant
     public const int srcNonCorTileHeight = 216;
     public const int CorTileWidth = 216;
     public const int CorTileHeight = 216;
-    public const int desinationX = 1200;
-    public const int desinationY = 100;
+    public const int strRollDiceDesX = 1200;
+    public const int strRollDiceDesY = 100;
 }   

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using monopoly;
+using System.Security.Cryptography;
 using System.Windows.Markup;
 
 class Player : IPlayer
@@ -30,6 +31,9 @@ class Player : IPlayer
  
     public int PlayerID => playerId;
     private int tile;
+    private int money = 50000;
+    private long numOfTilePlayerOwn = 0;
+    private string tileDescription = "";
     public int Tile { 
         get => tile; 
         set => tile = value; // tile's position
@@ -40,7 +44,10 @@ class Player : IPlayer
 
     
     }
-    public int Money { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
+    
+    public int Money { get => money; set => money = value; }
+    public int NumOfTilePlayerOwn { get => (int)numOfTilePlayerOwn; set => numOfTilePlayerOwn = value; }
+    public string TileDescription { set => tileDescription = value; } // value same as declare type
 
     public Player(int id)
     {
@@ -56,5 +63,21 @@ class Player : IPlayer
     public void update()
     {
         throw new System.NotImplementedException();
+    }
+
+    public string toString()
+    {
+        string result =  "Money: " + Money + "\n";
+        result += "Number of Tiles Owned: ";
+        for (int i = 0; i < 40; i++)
+        {
+            if((numOfTilePlayerOwn & (1 << i)) != 0)
+            {
+                result += i + ", ";
+
+            }
+        }
+        result += "\n" + tileDescription;
+        return result;
     }
 }

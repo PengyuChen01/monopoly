@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using monopoly;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Diagnostics;
@@ -15,13 +16,18 @@ class RealEstateTile : NonCornerTile
     private int id;
    
     int ID => id;
-
+    private float percentOfUpgrade = 0.2f;
+    private float percentOfRent = 0.40f;
     public override int BelongTo { get => belongTo; set => belongTo = value; }
     private int belongTo = -1;
     Rectangle source = new Rectangle(0, 0, 108, 216); // png starting point
     Rectangle destination = new Rectangle(0, 0, Width, Height); // computer starting point
+    static int[] costForTile = {0,60,0,90,150,200,120,0,130,250,0,140,150,160,140,200,180,0,200,200,0,200,
+        0,200,260,60,260,260,130,230,0,300,300,0,250,200,0,200,200,350}; // build cost for each tile
+    static int[,] costForRent = new int[40,5]; // rent for different tile
     
-   
+
+
     Texture2D[] textures =
     {
         Game1.battleshipTexture,
@@ -103,7 +109,10 @@ class RealEstateTile : NonCornerTile
 
     public override void DosomethingToPlayer(IPlayer player)
     {
-        
+        if(belongTo == -1)
+        {
+            player.TileDescription = "you can buy tile" + player.Tile + " with " + costForTile[player.Tile];
+        }
     }
 }
 

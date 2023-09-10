@@ -59,7 +59,7 @@ class JailTile : CornerTile
     
     public override void DosomethingToPlayer(IPlayer player)
     {
-   throw new NotImplementedException();
+        player.TileDescription = "";
     }
 
 }

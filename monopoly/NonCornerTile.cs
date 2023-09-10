@@ -17,4 +17,10 @@ abstract class NonCornerTile : ITile
 
     public abstract Point position(int playerId);
     public abstract void DosomethingToPlayer(IPlayer player);
+
+     public string toString()
+     {
+        return "";
+     }
+
 }
